@@ -58,22 +58,64 @@ function updateNumbers() {
 }
 
 function reserveSlot(id) {
-
     const slot = slots.find(slot => slot.id === id);
 
     if (slot && slot.available) {
-
         slot.available = false;
 
-        alert(
-            "✅ " + id +
-            " reserved successfully!\n\n📍 Navigation started."
-        );
+        const oldPanel = document.getElementById("navigationPanel");
+        if (oldPanel) oldPanel.remove();
+
+        const panel = document.createElement("div");
+        panel.id = "navigationPanel";
+
+        panel.innerHTML = `
+            <div style="
+                position:fixed;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                width:320px;
+                padding:25px;
+                background:#11152b;
+                color:white;
+                border-radius:18px;
+                text-align:center;
+                box-shadow:0 10px 40px rgba(0,0,0,0.5);
+                z-index:9999;
+                font-family:Arial;
+            ">
+                <h2>📍 Navigation Started</h2>
+
+                <h3>Parking Slot ${id}</h3>
+
+                <p>📏 Distance: 120 m</p>
+                <p>⏱️ Estimated Time: 2 min</p>
+
+                <p style="font-size:22px;">
+                    🚗 → 🅿️
+                </p>
+
+                <p>Route to ${id} is active.</p>
+
+                <button onclick="document.getElementById('navigationPanel').remove()"
+                    style="
+                    padding:10px 20px;
+                    border:none;
+                    border-radius:10px;
+                    cursor:pointer;
+                    font-weight:bold;
+                    ">
+                    Close
+                </button>
+            </div>
+        `;
+
+        document.body.appendChild(panel);
 
         displaySlots();
     }
 }
-
 function findParking() {
 
     const firstAvailable = slots.find(slot => slot.available);
