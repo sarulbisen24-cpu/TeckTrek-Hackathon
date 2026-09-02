@@ -224,3 +224,47 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+.map-subtitle {
+    color: #687386;
+    margin-bottom: 25px;
+}
+
+.parking-map {
+    background: #e9edf2;
+    border: 2px solid #d5dbe3;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+}
+
+.entrance,
+.exit {
+    font-weight: bold;
+    margin: 15px;
+}
+
+.map-slots {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 800px;
+    margin: 25px auto;
+}
+
+.map-slots .slot {
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.map-slots .slot button {
+    margin-top: 8px;
+}
+
+@media (max-width: 700px) {
+    .map-slots {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
