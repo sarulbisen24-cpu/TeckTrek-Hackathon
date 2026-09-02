@@ -1,1 +1,226 @@
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #172033;
+}
+
+header {
+    height: 70px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.live {
+    color: #19a463;
+    font-weight: bold;
+}
+
+.hero {
+    padding: 70px 8%;
+    background: white;
+}
+
+.hero > p:first-child {
+    color: #19a463;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 55px;
+    margin: 15px 0;
+}
+
+.subtitle {
+    color: #687386;
+    font-size: 18px;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+button {
+    background: #172033;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.dashboard {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #e1e5eb;
+}
+
+.stat h2 {
+    font-size: 35px;
+    margin: 0;
+}
+
+.stat p {
+    color: #707a8c;
+}
+
+.available h2 {
+    color: #19a463;
+}
+
+.occupied h2 {
+    color: #df4d4d;
+}
+
+.parking {
+    max-width: 1100px;
+    margin: 70px auto;
+    padding: 0 20px;
+}
+
+.parking h2,
+.how h2 {
+    font-size: 32px;
+}
+
+.slots {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.slot {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid #e0e4ea;
+}
+
+.slot h3 {
+    margin-top: 0;
+}
+
+.available-slot {
+    border-left: 5px solid #19a463;
+}
+
+.occupied-slot {
+    border-left: 5px solid #df4d4d;
+}
+
+.status {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.green {
+    color: #19a463;
+}
+
+.red {
+    color: #df4d4d;
+}
+
+.slot button {
+    width: 100%;
+}
+
+.slot button:disabled {
+    background: #ddd;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.how {
+    max-width: 1100px;
+    margin: 70px auto;
+    padding: 0 20px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.steps div {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #e0e4ea;
+}
+
+.steps b {
+    color: #19a463;
+}
+
+.steps p {
+    color: #687386;
+    line-height: 1.5;
+}
+
+.note {
+    max-width: 1060px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #eaf7f0;
+    border-left: 5px solid #19a463;
+    border-radius: 8px;
+}
+
+.note p {
+    color: #586477;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #777;
+}
+
+@media(max-width: 700px) {
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .dashboard,
+    .slots,
+    .steps {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 450px) {
+
+    .dashboard,
+    .slots,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+}
