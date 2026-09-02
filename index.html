@@ -1,9 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Hackathon Practice</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkSmart - Smart Parking</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Hello Hackathon!</h1>
+
+<header>
+    <div class="logo">🚗 ParkSmart</div>
+    <div class="live">● LIVE</div>
+</header>
+
+<section class="hero">
+    <p>SMART CITY SOLUTION</p>
+    <h1>Find a Parking Slot<br>Without the Hassle.</h1>
+    <p class="subtitle">
+        Check parking availability, reserve a slot and navigate easily.
+    </p>
+
+    <button onclick="findParking()">Find Parking</button>
+</section>
+
+<section class="dashboard">
+
+    <div class="stat">
+        <h2 id="total">8</h2>
+        <p>Total Slots</p>
+    </div>
+
+    <div class="stat available">
+        <h2 id="available">5</h2>
+        <p>Available</p>
+    </div>
+
+    <div class="stat occupied">
+        <h2 id="occupied">3</h2>
+        <p>Occupied</p>
+    </div>
+
+</section>
+
+<section class="parking">
+
+    <h2>Parking Slots</h2>
+
+    <div class="slots" id="slots"></div>
+
+</section>
+
+<section class="how">
+
+    <h2>How It Works</h2>
+
+    <div class="steps">
+        <div>
+            <b>01</b>
+            <h3>Check Availability</h3>
+            <p>See which parking slots are free.</p>
+        </div>
+
+        <div>
+            <b>02</b>
+            <h3>Reserve</h3>
+            <p>Select an available parking slot.</p>
+        </div>
+
+        <div>
+            <b>03</b>
+            <h3>Navigate</h3>
+            <p>Get directions to your selected slot.</p>
+        </div>
+    </div>
+
+</section>
+
+<section class="note">
+    <b>Prototype Mode</b>
+    <p>
+        Parking data is simulated for this hackathon prototype.
+        In the real system, ESP32 and parking sensors would provide
+        live occupancy data.
+    </p>
+</section>
+
+<footer>
+    ParkSmart | Innovation Hackathon 2026
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
