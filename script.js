@@ -1,4 +1,3 @@
-
 const slots = [
     { id: "P1", available: true },
     { id: "P2", available: false },
@@ -25,7 +24,9 @@ function displaySlots() {
             : "slot occupied-slot";
 
         card.innerHTML = `
-            <h3>🅿️ ${slot.id}</h3>
+            <div class="parking-icon">🚗</div>
+
+            <h3>${slot.id}</h3>
 
             <p class="status ${slot.available ? "green" : "red"}">
                 ${slot.available ? "● AVAILABLE" : "● OCCUPIED"}
@@ -65,8 +66,8 @@ function reserveSlot(id) {
         slot.available = false;
 
         alert(
-            "Parking slot " + id +
-            " reserved successfully! Navigation started."
+            "✅ " + id +
+            " reserved successfully!\n\n📍 Navigation started."
         );
 
         displaySlots();
@@ -80,8 +81,9 @@ function findParking() {
     if (firstAvailable) {
 
         alert(
-            "Nearest available slot: " +
-            firstAvailable.id
+            "🅿️ Nearest available slot: " +
+            firstAvailable.id +
+            "\n\n📍 You can reserve it now."
         );
 
     } else {
@@ -91,3 +93,4 @@ function findParking() {
 }
 
 displaySlots();
+
